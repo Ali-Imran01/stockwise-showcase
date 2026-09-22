@@ -1,0 +1,38 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/inter';
+
+/* Dashboard app aesthetic — Tailwind's built-in slate/blue palette is used directly
+   throughout (matches the real system's own implementation), no custom color tokens
+   needed here. Light theme only; this is a single-purpose demo, not a public site. */
+
+@theme inline {
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background-color: #f8fafc;
+  color: #0f172a;
+  font-family: var(--font-sans);
+}
+
+:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
